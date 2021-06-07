@@ -8,13 +8,20 @@ class Users
 
     function __construct()
     {
+      // create a connection to our database
+      //localhost
       $this->db = new PDO('mysql:host=localhost;dbname=wdv441_2021;charset=utf8',
           'wdv441_user', 'Frozen21!');
+
+      //host
+      /*$this->db = new PDO('mysql:host=localhost;dbname=emanning11_wdv441_2021;charset=utf8',
+          'emanning11_wdv441_2021', 'Frozen21!');*/
     }
 
     function set($dataArray)
     {
         $this->userData = $dataArray;
+        var_dump($dataArray);
     }
 
     function sanitize($dataArray)
@@ -51,6 +58,7 @@ class Users
 
         // determine if insert or update based on articleID
         // save data from articleData property to database
+        var_dump($this->userData['user_id']);die;
         if (empty($this->userData['user_id']))
         {
 
@@ -159,9 +167,11 @@ class Users
         if ($stmt)
         {
             $stmt->execute(array('%' . $filterText . '%'));
-
+            //var_dump($filterText);
             $userList = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        //var_dump($stmt);
 
 
         return $userList;

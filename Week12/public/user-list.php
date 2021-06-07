@@ -6,7 +6,11 @@ require_once('../inc/Users.class.php');
 $ch = curl_init();
 
 // set url
-curl_setopt($ch, CURLOPT_URL, "http://localhost/wdv441/Week12/public/weather-widget.php");
+//localhost
+/*curl_setopt($ch, CURLOPT_URL, "http://localhost/wdv441/Week12/public/weather-widget.php");*/
+
+//host
+curl_setopt($ch, CURLOPT_URL, "https://ericamanning.com/wdv441/Week12/public/weather-widget.php");
 
 // if redirected, follow it
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -38,7 +42,7 @@ $userList = $user->getList(
     (isset($_GET['filterText']) ? $_GET['filterText'] : null)
 );
 
-//var_dump($articleList);
+//var_dump($userList);
 require_once('../tpl/user-list.tpl.php');
 
 // create curl resource

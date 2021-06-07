@@ -5,7 +5,11 @@ require_once('../inc/Users.class.php');
 $ch = curl_init();
 
 // set url
-curl_setopt($ch, CURLOPT_URL, "http://localhost/wdv441/Week12/public/weather-forecast-widget.php");
+//localhost
+/*curl_setopt($ch, CURLOPT_URL, "http://localhost/wdv441/Week12/public/weather-forecast-widget.php");*/
+
+//host
+curl_setopt($ch, CURLOPT_URL, "https://ericamanning.com/wdv441/Week12/public/weather-forecast-widget.php");
 
 // if redirected, follow it
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);

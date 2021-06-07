@@ -12,8 +12,13 @@
        function __construct()
       {
         // create a connection to our database
-        $this->db = new PDO('mysql:host=localhost;dbname=wdv441_2021;charset=utf8',
-            'wdv441_user', 'Frozen21!');
+        //localhost
+        /*$this->db = new PDO('mysql:host=localhost;dbname=wdv441_2021;charset=utf8',
+            'wdv441_user', 'Frozen21!');*/
+
+        //host
+        $this->db = new PDO('mysql:host=localhost;dbname=emanning11_wdv441_2021;charset=utf8',
+            'emanning11_wdv441_2021', 'Frozen21!');
       }
 
        function set($dataArray)
